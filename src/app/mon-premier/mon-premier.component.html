@@ -1,0 +1,13 @@
+<h2>Mes appareils</h2>
+<p>Mis à jour : {{lastUpdate | date:'dd/MM/YYYY'}}</p>
+<app-appareil-view *ngFor="let appareil of appareils; let i = index"
+				[id]="appareil.id"
+				[appareilName]="appareil.name" 
+				[appareilStatus]="appareil.status"
+				[indexOfAppareil]="i">
+</app-appareil-view>
+
+<div>
+<button class="btn btn-success" (click)="onAllumerTout()">Allumer tout</button>
+<button class="btn btn-danger" (click)="onEteindreTout()">Eteindre tout</button>
+</div>

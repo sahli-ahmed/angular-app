@@ -1,0 +1,18 @@
+<div class="col-sm-8 col-sm-offset-2">
+
+	<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+		<div class="form-group">
+			<label for="name">Nom de l'appareil</label>
+			<input type="text" name="name" id="name" class="form-control" ngModel required />
+		</div>
+		<div class="form-group">
+			<label for="status">Statut</label>
+			<select name="status" id ="status" class="form-control" [ngModel]="defaultStatus" required>
+				<option value="Allumer">Allumer</option>
+				<option value="Eteint">Eteint</option>
+			</select>
+		</div>
+		<button type="submit" class="btn btn-primary" [disabled]="f.invalid">Ajouter</button>
+	</form>
+
+</div>
